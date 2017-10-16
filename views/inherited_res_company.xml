@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+       <record id="portal_user_view_company_form_inherited" model="ir.ui.view">
+           <field name="name">portal.user.view.company.form.inherited</field>
+           <field name="model">res.company</field>
+           <field name="inherit_id" ref="base.view_company_form"/>
+           <field name="arch" type="xml">
+                <field name="website" position="after">
+                    <field name="base_url"/>
+                    <field name="user_template_id" options="{'no_create': True}"/>
+                    <field name="portal_mail_id" options="{'no_create': True}"/>
+                    <field name="email_template_id" options="{'no_create': True}"/>
+                </field>
+           </field>
+       </record>
+
+    </data>
+</odoo>
