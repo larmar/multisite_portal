@@ -17,9 +17,11 @@ class PortalUserResPartner(models.Model):
         res = dict.fromkeys(self.ids, False)
 
         # base_url = self.env['ir.config_parameter'].get_param('web.base.url')
-        base_url = self.company_id.base_url
 
         for partner in self:
+
+            base_url = partner.company_id.base_url
+
             # when required, make sure the partner has a valid signup token
             if self.env.context.get('signup_valid') and not partner.user_ids:
                 partner.signup_prepare()
